@@ -63,7 +63,7 @@ namespace TimeLine
             }
             else
             {
-                command = "insert into users values('"+ textBoxUserName.Text+ "','"+textBoxPassword.Text+"')";
+                command = "insert into users (account,password) values('" + textBoxUserName.Text+ "','"+textBoxPassword.Text+"')";
                 mycom.CommandText = command;
                 mycom.ExecuteNonQuery();
                 command = null;

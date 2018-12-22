@@ -57,6 +57,15 @@ namespace TimeLine
             {
                 MessageBox.Show("登陆成功!");
                 Program.isValidUser = true;
+                command = "select user_id from users where account ='" + username + "' and password='" + passw + "'";
+                mycom.CommandText = command;
+                MySqlDataReader reader = null;
+                reader = mycom.ExecuteReader();
+                while (reader.Read())
+                {
+                    Program.user_id =Convert.ToInt32(reader[0].ToString());
+                }
+                reader.Close();
                 Program.user = username;
                 this.Close();
             }

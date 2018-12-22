@@ -81,7 +81,7 @@ namespace TimeLine
                 MySqlConnection mycon = new MySqlConnection(constr);
                 mycon.Open();
                 MySqlCommand mycom = mycon.CreateCommand();
-                string command = "insert into infos values('" + Program.user + "','" + content.ToString() + "','" + mypath + "','" + time + "')";
+                string command = "insert into infos values('" + Program.user_id + "','" + content.ToString() + "','" + mypath + "','" + time + "')";
                 mycom.CommandText = command;
                 mycom.ExecuteNonQuery();
                 command = null;

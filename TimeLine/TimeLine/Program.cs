@@ -9,6 +9,7 @@ namespace TimeLine
     static class Program
     {
         public static bool isValidUser;
+        public static int user_id;
         public static string user;
         /// <summary>
         /// 应用程序的主入口点。

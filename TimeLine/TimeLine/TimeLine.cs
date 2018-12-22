@@ -40,7 +40,7 @@ namespace TimeLine
             mycon.Open();
             MySqlDataReader reader = null;
             MySqlCommand mycom = mycon.CreateCommand();
-            string command = "select * from infos order by time desc";
+            string command = "select account,information,image,time from infos natural join users order by time desc";
             mycom.CommandText = command;
             reader = mycom.ExecuteReader();
             while (reader.Read() && i<5)
@@ -103,7 +103,7 @@ namespace TimeLine
             mycon.Open();
             MySqlDataReader reader = null;
             MySqlCommand mycom = mycon.CreateCommand();
-            string command = "select * from infos order by time desc";
+            string command = "select account,information,image,time from users natural join infos order by time desc";
             mycom.CommandText = command;
             reader = mycom.ExecuteReader();
             while (reader.Read() && i < 5)
@@ -145,6 +145,11 @@ namespace TimeLine
         {
             Show show = new Show();
             show.ShowDialog();
+        }
+
+        private void dataGridView1_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
